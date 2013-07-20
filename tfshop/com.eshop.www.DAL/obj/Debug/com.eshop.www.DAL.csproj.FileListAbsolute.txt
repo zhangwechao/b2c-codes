@@ -28,3 +28,13 @@ E:\ll\tfshop\com.eshop.www.DAL\bin\Debug\com.eshop.www.Tools.pdb
 E:\ll\tfshop\com.eshop.www.DAL\obj\Debug\ResolveAssemblyReference.cache
 E:\ll\tfshop\com.eshop.www.DAL\obj\Debug\com.eshop.www.DAL.dll
 E:\ll\tfshop\com.eshop.www.DAL\obj\Debug\com.eshop.www.DAL.pdb
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\bin\Debug\com.eshop.www.DAL.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\bin\Debug\com.eshop.www.DAL.pdb
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\bin\Debug\com.eshop.www.Model.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\bin\Debug\com.eshop.www.Tools.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\bin\Debug\com.eshop.www.Model.pdb
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\bin\Debug\com.eshop.www.Tools.pdb
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\obj\Debug\com.eshop.www.DAL.csprojResolveAssemblyReference.cache
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\obj\Debug\com.eshop.www.DAL.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.DAL\obj\Debug\com.eshop.www.DAL.pdb

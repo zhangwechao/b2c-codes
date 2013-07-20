@@ -105,6 +105,7 @@
     <Compile Include="ResumeBusiness.cs" />
     <Compile Include="ShoppingDateBusiness.cs" />
     <Compile Include="ShoppingMethodBusiness.cs" />
+    <Compile Include="Test\Test.cs" />
     <Compile Include="VideoBusiness.cs" />
   </ItemGroup>
   <ItemGroup>

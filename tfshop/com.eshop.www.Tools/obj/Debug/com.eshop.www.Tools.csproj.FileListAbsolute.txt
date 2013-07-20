@@ -13,3 +13,8 @@ E:\ll\tfshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.pdb
 E:\ll\tfshop\com.eshop.www.Tools\obj\Debug\ResolveAssemblyReference.cache
 E:\ll\tfshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.dll
 E:\ll\tfshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.pdb
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.pdb
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.csprojResolveAssemblyReference.cache
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.pdb

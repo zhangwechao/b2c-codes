@@ -13,3 +13,7 @@ E:\ll\tfshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.pdb
 E:\ll\tfshop\com.eshop.www.Model\obj\Debug\ResolveAssemblyReference.cache
 E:\ll\tfshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.dll
 E:\ll\tfshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.pdb
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.pdb
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.dll
+C:\Users\WeiChao.Zhang\Documents\GitHub\b2c-codes\tfshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.pdb
