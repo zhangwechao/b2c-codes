@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="administrator_admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>管理后台</title>
+    <script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-1.8.7.custom.min.js" type="text/javascript"></script>
+    <script src="js/admin-common.js" type="text/javascript"></script>
+    <link href="css/jquery-ui-1.8.7.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/admin-common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        function logout(){
+            $.ajax({
+                url:'handler/logout.ashx',
+                type:'post',
+                success:function(msg){
+                    if(msg=="ok"){
+                        window.location.href='/manager';
+                    }
+                },
+                error:function(msg){
+                    alert(msg.responseText);
+                }
+            });
+        }
+        
+    </script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="logo">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" background="image/topbg.jpg">
+            <tr>
+                <td width="60%"  height="60"><img src="image/logo.gif" /></td>
+                <td width="40%" background="image/A-dmin-001.gif">
+                <ul>
+                    <li class="li2"><img src="image/edit.gif" /> <a href="javascript:logout()">退出</a></li>
+                    <li class="li4"><img src="image/finance_warn3.gif" /> <asp:Literal ID="lCurrentDate" runat="server"></asp:Literal></li>
+                    <li class="li1"><asp:Literal ID="lRole" runat="server"></asp:Literal></li>
+                    <li class="li1"><img src="image/cus_group.gif" /> <asp:Literal ID="lUserName" runat="server"></asp:Literal></li>
+                </ul>
+                </td>
+            </tr>
+         </table>
+    </div>
+    <div id="navigation">
+        <ul id="ul_nav">
+        <asp:Repeater ID="rModuleList" runat="server">
+        <ItemTemplate>
+            <li id='li_<%#GetModule(int.Parse(Eval("module_id").ToString())).Remark %>'><a href='#<%#GetModule(int.Parse(Eval("module_id").ToString())).Remark %>'><%#GetModule(int.Parse(Eval("module_id").ToString())).ModuleName%></a></li>
+        </ItemTemplate>
+        </asp:Repeater>
+            
+            <%--<li><a href="#article">文章系统</a></li>
+            <li><a href="#order">订单系统</a></li>
+            <li><a href="#member">会员管理</a></li>
+            <li><a href="#system">系统管理</a></li>--%>
+        </ul>
+        <asp:Repeater ID="rFatherModuleList" runat="server" 
+            onitemdatabound="rFatherModuleList_ItemDataBound">
+        <ItemTemplate>
+        <div id='<%#GetModule(int.Parse(Eval("module_id").ToString())).Remark %>''>
+            <ul>
+            <asp:Repeater ID="rSonModuleList" runat="server">
+            <ItemTemplate>
+            <li><a href='<%#Eval("remark") %>.aspx' id='<%#Eval("remark") %>_page'><%#Eval("module_name") %></a></li>
+            </ItemTemplate>
+            </asp:Repeater>
+                
+                <%--<li><a href="category_attribute.aspx" id="category_attribute_page">目录属性</a></li>
+                <li><a href="product_content.aspx" id="product_content_page">产品内容</a></li>
+                <li><a href="product_brand.aspx" id="product_brand_page">产品品牌</a></li>
+                <li><a href="product_comment.aspx" id="product_comment_page">产品评论</a></li>--%>
+            </ul>
+        </div>
+        </ItemTemplate>
+        </asp:Repeater>
+        
+        <%--<div id="article">
+            <ul>
+                <li><a href="news.aspx" id="news_page">新闻动态</a></li>
+                <li><a href="help.aspx" id="help_page">在线帮助</a></li>
+                <li><a href="website_sitepost.aspx" id="website_sitepost_page">网站公告</a></li>
+                <li><a href="secret_protect.aspx" id="secret_protect_page">隐私保护</a></li>
+                <li><a href="law_statement.aspx" id="law_statement_page">政策法律声明</a></li>
+                <li><a href="recruit.aspx" id="recruit_page">在线招聘</a></li>
+                <li><a href="integrate_purchase.aspx" id="integrate_purchase_page">团购专区</a></li>
+                <li><a href="news_recycle.aspx" id="news_recycle_page">回收站</a></li>
+            </ul>
+        </div>
+        <div id="order">
+            <ul>
+                <li><a href="order.aspx" id="order_page">订单</a></li>
+                <li><a href="shopping_method.aspx" id="shopping_method_page">送货方式</a></li>
+                <li><a href="payment_method.aspx" id="payment_method_page">付款方式</a></li>
+                <li><a href="shopping_date.aspx" id="shopping_date_page">送货时间</a></li>
+                <li><a href="order_status.aspx" id="order_status_page">订单状态</a></li>
+            </ul>
+        </div>
+        <div id="member">
+            <ul>
+                <li><a href="member_info.aspx" id="member_info_page">会员管理</a></li>
+                <li><a href="member_level.aspx" id="member_level_page">会员级别</a></li>
+                <li><a href="online_message.aspx" id="online_message_page">在线反馈</a></li>
+                <li><a href="favorite.aspx" id="favorite_page">收藏夹</a></li>
+            </ul>
+        </div>
+        <div id="system">
+            <ul>
+                <li><a href="admin_list.aspx" id="admin_list_page">管理登录</a></li>
+                <li><a href="role.aspx" id="role_page">角色管理</a></li>
+            </ul>
+        </div>--%>
+    </div>
+    <script type="text/javascript">
+        var $tabs = $("#navigation").tabs();
+    </script>
+    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+
+</html>

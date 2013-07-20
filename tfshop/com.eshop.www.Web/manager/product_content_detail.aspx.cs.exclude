@@ -1,0 +1,372 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Xml.Linq;
+using com.eshop.www.Model;
+using com.eshop.www.BLL;
+using System.IO;
+using com.eshop.www.Tools;
+using System.Data;
+
+public partial class administrator_product_content_detail : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            ddlCategory_load();
+            //ddlBrand_load();
+            string action = Request.QueryString["action"];
+            txtContent.ImageGalleryPath = "~/upload-file/detail/product";
+            if (action == "update")
+            {
+                ProductDetailBusiness productDetailBusiness = new ProductDetailBusiness();
+                int id = int.Parse(Request.QueryString["Id"]);
+                btnReset.Visible = false;
+                btnDelete.Visible = true;
+                btnSave.Visible = true;
+                btnNext.Visible = true;
+                btnPrev.Visible = true;
+
+                btnReset2.Visible = false;
+                btnDelete2.Visible = true;
+                btnSave2.Visible = true;
+                btnNext2.Visible = true;
+                btnPrev2.Visible = true;
+                if (productDetailBusiness.IsHasNext(id))
+                {
+                    btnNext.Enabled = false;
+                    btnNext2.Enabled = false;
+                }
+                if (productDetailBusiness.IsHasPrev(id))
+                {
+                    btnPrev.Enabled = false;
+                    btnPrev2.Enabled = false;
+                }
+                DataRead();
+            }
+            else
+            {
+                btnReset.Visible = true;
+                btnDelete.Visible = false;
+                btnSave.Visible = true;
+                btnNext.Visible = false;
+                btnPrev.Visible = false;
+
+                btnReset2.Visible = true;
+                btnDelete2.Visible = false;
+                btnSave2.Visible = true;
+                btnNext2.Visible = false;
+                btnPrev2.Visible = false;
+            }
+        }
+    }
+
+    private void DataRead()
+    {
+        int id = int.Parse(Request.QueryString["Id"]);
+        ProductDetailBusiness productDetailBusiness = new ProductDetailBusiness();
+        ProductDetail productDetail = productDetailBusiness.GetEntity(id);
+        displayInfo(productDetail);
+    }
+    private void displayInfo(ProductDetail productDetail)
+    {
+        txtProductName.Text = productDetail.ProductName;
+        txtOrderBy.Text = productDetail.OrderBy.ToString();
+
+        ddlCategory.SelectedValue = productDetail.CategoryId.ToString();
+        ddlBrand.SelectedValue = productDetail.BrandId.ToString();
+
+        chkIsShow.Checked = productDetail.IsShow;
+        chkIsRecomment.Checked = productDetail.IsRecommend;
+        chkIsNew.Checked = productDetail.IsNew;
+        chkIsHot.Checked = productDetail.IsHot;
+        chkIsDiscount.Checked = productDetail.IsDiscount;
+        chkIsComment.Checked = productDetail.IsComment;
+
+        txtKeywords.Text = productDetail.Keywords;
+        txtSummary.Text = productDetail.Summary;
+        txtContent.Text = productDetail.Description;
+
+        txtPrice.Text = productDetail.Price.ToString("0.0");
+        txtSalePrice.Text = productDetail.SalePrice.ToString("0.0");
+        txtIntegral.Text = productDetail.integral.ToString();
+
+        txtSaleNumber.Text = productDetail.SaleNumber.ToString();
+        txtStock.Text = productDetail.Stock.ToString();
+    }
+    private bool Save()
+    {
+        ProductDetailBusiness productDetailBusiness = new ProductDetailBusiness();
+
+        string productName = txtProductName.Text.Trim();
+        string orderBy = txtOrderBy.Text.Trim();
+        int categoryId = int.Parse(ddlCategory.SelectedValue);
+        int brandId = int.Parse(ddlBrand.SelectedValue);
+        bool isShow = chkIsShow.Checked;
+        bool isRecommend = chkIsRecomment.Checked;
+        bool isComment = chkIsComment.Checked;
+        bool isNew = chkIsNew.Checked;
+        bool isHot = chkIsHot.Checked;
+        bool IsDiscount = chkIsDiscount.Checked;
+        string keywords = txtKeywords.Text.Trim();
+        string summary = txtSummary.Text.Trim();
+        string description = txtContent.Text.Trim();
+        string price = txtPrice.Text.Trim();
+        string salePrice = txtSalePrice.Text.Trim();
+        string integral = txtIntegral.Text.Trim();
+        string saleNumber = txtSaleNumber.Text.Trim();
+        string stock = txtStock.Text.Trim();
+
+        ProductDetail productDetail = new ProductDetail();
+        productDetail.BrandId = brandId;
+        productDetail.Description = description;
+        productDetail.HtmlName = "";
+        productDetail.ClickNumber = 0;
+        productDetail.IsShow = isShow;
+        productDetail.Keywords = keywords;
+        productDetail.OrderBy = string.IsNullOrEmpty(orderBy) ? productDetailBusiness.GetMaxOrder() : int.Parse(orderBy);
+        productDetail.Summary = summary;
+        productDetail.ProductName = productName;
+        productDetail.CategoryId = categoryId;
+        productDetail.IsComment = isComment;
+        productDetail.IsDelete = false;
+        productDetail.IsRecommend = isRecommend;
+        productDetail.HtmlName = "";
+        if (integral.Length > 0)
+            productDetail.integral = int.Parse(integral);
+        else
+            productDetail.integral = 0;
+        productDetail.IsDiscount = IsDiscount;
+        productDetail.IsHot = isHot;
+        productDetail.IsNew = isNew;
+        if (price.Length > 0)
+            productDetail.Price = float.Parse(price);
+        else
+            productDetail.Price = 0;
+        if (salePrice.Length > 0)
+            productDetail.SalePrice = float.Parse(salePrice);
+        else
+            productDetail.SalePrice = 0;
+
+        if (saleNumber.Length > 0)
+            productDetail.SaleNumber = int.Parse(saleNumber);
+        else
+            productDetail.SaleNumber = 0;
+
+        if (stock.Length > 0)
+            productDetail.Stock = int.Parse(stock);
+        else
+            productDetail.Stock = 0;
+
+        //return productDetailBusiness.Add(productDetail);
+        productDetailBusiness.Add(productDetail);
+        return true;
+    }
+    private bool Update()
+    {
+        ProductDetailBusiness productDetailBusiness = new ProductDetailBusiness();
+        int id = int.Parse(Request.QueryString["Id"]);
+        ProductDetail productDetail = productDetailBusiness.GetEntity(id);
+
+        string productName = txtProductName.Text.Trim();
+        string orderBy = txtOrderBy.Text.Trim();
+        int categoryId = int.Parse(ddlCategory.SelectedValue);
+        int brandId = int.Parse(ddlBrand.SelectedValue);
+        bool isShow = chkIsShow.Checked;
+        bool isRecommend = chkIsRecomment.Checked;
+        bool isComment = chkIsComment.Checked;
+        bool isNew = chkIsNew.Checked;
+        bool isHot = chkIsHot.Checked;
+        bool IsDiscount = chkIsDiscount.Checked;
+        string keywords = txtKeywords.Text.Trim();
+        string summary = txtSummary.Text.Trim();
+        string description = txtContent.Text.Trim();
+        string price = txtPrice.Text.Trim();
+        string salePrice = txtSalePrice.Text.Trim();
+        string integral = txtIntegral.Text.Trim();
+        string saleNumber = txtSaleNumber.Text.Trim();
+        string stock = txtStock.Text.Trim();
+
+        productDetail.BrandId = brandId;
+        productDetail.Description = description;
+        productDetail.HtmlName = "";
+        productDetail.ClickNumber = 0;
+        productDetail.IsShow = isShow;
+        productDetail.Keywords = keywords;
+        productDetail.OrderBy = string.IsNullOrEmpty(orderBy) ? productDetailBusiness.GetMaxOrder() : int.Parse(orderBy);
+        productDetail.Summary = summary;
+        productDetail.ProductName = productName;
+        productDetail.CategoryId = categoryId;
+        productDetail.IsComment = isComment;
+        productDetail.IsDelete = false;
+        productDetail.IsRecommend = isRecommend;
+        if (integral.Length > 0)
+            productDetail.integral = int.Parse(integral);
+        else
+            productDetail.integral = 0;
+        productDetail.IsDiscount = IsDiscount;
+        productDetail.IsHot = isHot;
+        productDetail.IsNew = isNew;
+        if (price.Length > 0)
+            productDetail.Price = float.Parse(price);
+        else
+            productDetail.Price = 0;
+        if (salePrice.Length > 0)
+            productDetail.SalePrice = float.Parse(salePrice);
+        else
+            productDetail.SalePrice = 0;
+
+        if (saleNumber.Length > 0)
+            productDetail.SaleNumber = int.Parse(saleNumber);
+        else
+            productDetail.SaleNumber = 0;
+
+        if (stock.Length > 0)
+            productDetail.Stock = int.Parse(stock);
+        else
+            productDetail.Stock = 0;
+
+        return productDetailBusiness.Update(productDetail);
+    }
+
+    protected void btnDelete_Click(object sender, EventArgs e)
+    {
+        int id = int.Parse(Request.QueryString["Id"]);
+        ProductDetailBusiness productDetailBusiness = new ProductDetailBusiness();
+        bool success = productDetailBusiness.Delete(id);
+        if (success)
+            JavascriptHelper.AlertAndRedirect("删除成功", "product_content.aspx");
+    }
+    protected void btnReset_Click(object sender, EventArgs e)
+    {
+        txtProductName.Text = "";
+        txtOrderBy.Text = "";
+        txtKeywords.Text = "";
+        txtSummary.Text = "";
+        txtContent.Text = "";
+        txtPrice.Text = "";
+        txtSalePrice.Text = "";
+        txtIntegral.Text = "";
+    }
+    protected void btnNext_Click(object sender, EventArgs e)
+    {
+        ProductDetailBusiness productDetailBusiness = new ProductDetailBusiness();
+        int id = int.Parse(Request.QueryString["Id"]);
+        int nextId = productDetailBusiness.Next(id);
+        Response.Redirect("product_content_detail.aspx?Id=" + nextId + "&action=update");
+    }
+    protected void btnPrev_Click(object sender, EventArgs e)
+    {
+        ProductDetailBusiness productDetailBusiness = new ProductDetailBusiness();
+        int id = int.Parse(Request.QueryString["Id"]);
+        int prevId = productDetailBusiness.Previous(id);
+        Response.Redirect("product_content_detail.aspx?Id=" + prevId + "&action=update");
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        string action = Request.QueryString["action"];
+        if (action == "update")
+        {
+            if (Update())
+                JavascriptHelper.AlertAndRedirect("修改信息成功","product_content.aspx");
+        }
+        else
+        {
+            if (Save())
+            {
+                JavascriptHelper.AlertAndRedirect("增加信息成功","product_content.aspx");
+            }
+        }
+    }
+    protected void btnReturn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("product_content.aspx");
+    }
+    private void ddlCategory_load()
+    {
+        ddlCategory.Items.Clear();
+        ListItem item = new ListItem("--请选择--", "0");
+        ddlCategory.Items.Add(item);
+
+        ProductCategoryBusiness productCategoryBusiness = new ProductCategoryBusiness();
+        DataRecordTable table = productCategoryBusiness.GetList("Id,category_name,order_by", "order_by", false, 1, 50, "father_id=0");
+        string text = string.Empty;
+        string value = string.Empty;
+        foreach (DataRow row in table.Table.Rows)
+        {
+            text = "╋" + row["category_name"].ToString();
+            value = row["Id"].ToString();
+            item = new ListItem(text, value);
+
+            ddlCategory.Items.Add(item);
+            CreateChild(value, "├", table, productCategoryBusiness);
+        }
+    }
+    private void CreateChild(string parentId, string nodeText, DataRecordTable table, ProductCategoryBusiness productCategoryBusiness)
+    {
+        table = productCategoryBusiness.GetList("Id,category_name,order_by", "order_by", false, 1, 50, "father_id=" + parentId);
+        ListItem item = null;
+        foreach (DataRow row in table.Table.Rows)
+        {
+            item = new ListItem(nodeText + "─" + row["category_name"].ToString(), row["Id"].ToString());
+            ddlCategory.Items.Add(item);
+            CreateChild(row["Id"].ToString(), nodeText + "─", table, productCategoryBusiness);
+        }
+    }
+    //private void ddlBrand_load()
+    //{
+    //    ddlBrand.Items.Clear();
+    //    ListItem item = new ListItem("--请选择--", "0");
+    //    ddlBrand.Items.Add(item);
+
+    //    ProductBrandBusiness productBrandBusiness = new ProductBrandBusiness();
+    //    DataRecordTable table = productBrandBusiness.GetList("Id,brand_name,order_by", "order_by", false, 1, 50, "");
+    //    string text = string.Empty;
+    //    string value = string.Empty;
+    //    foreach (DataRow row in table.Table.Rows)
+    //    {
+    //        text = row["brand_name"].ToString();
+    //        value = row["Id"].ToString();
+    //        item = new ListItem(text, value);
+
+    //        ddlBrand.Items.Add(item);
+    //    }
+    //}
+    protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string categoryId = ((DropDownList)sender).SelectedValue;
+        int fatherId = GetFatherId(int.Parse(categoryId));
+
+        ddlBrand.Items.Clear();
+        ListItem item = new ListItem("--请选择--", "0");
+        ddlBrand.Items.Add(item);
+
+        ProductBrandBusiness productBrandBusiness = new ProductBrandBusiness();
+        DataRecordTable table = productBrandBusiness.GetList("Id,brand_name,order_by", "order_by", false, 1, 50, "category_id="+fatherId);
+        string text = string.Empty;
+        string value = string.Empty;
+        foreach (DataRow row in table.Table.Rows)
+        {
+            text = row["brand_name"].ToString();
+            value = row["Id"].ToString();
+            item = new ListItem(text, value);
+
+            ddlBrand.Items.Add(item);
+        }
+
+    }
+    private int GetFatherId(int categoryId)
+    {
+        int fatherId = 0;
+        ProductCategoryBusiness productCategoryBusiness = new ProductCategoryBusiness();
+        ProductCategory productCategory = productCategoryBusiness.GetEntity(categoryId);
+        if (productCategory.FatherId == 0)
+            fatherId = productCategory.Id;
+        else
+            fatherId = GetFatherId(productCategory.FatherId);
+        return fatherId;
+    }
+}

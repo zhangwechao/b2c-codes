@@ -1,0 +1,12 @@
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Tools\obj\Debug\ResolveAssemblyReference.cache
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Tools\bin\Debug\com.timjcshop.www.Tools.dll
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Tools\bin\Debug\com.timjcshop.www.Tools.pdb
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Tools\bin\Debug\Newtonsoft.Json.dll
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Tools\bin\Debug\Top4Net.dll
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Tools\obj\Debug\com.timjcshop.www.Tools.dll
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Tools\obj\Debug\com.timjcshop.www.Tools.pdb
+D:\dev\添美\timjcshop\com.timjcshop.www.Tools\bin\Debug\com.timjcshop.www.Tools.dll
+D:\dev\添美\timjcshop\com.timjcshop.www.Tools\bin\Debug\com.timjcshop.www.Tools.pdb
+D:\dev\添美\timjcshop\com.timjcshop.www.Tools\obj\Debug\ResolveAssemblyReference.cache
+D:\dev\添美\timjcshop\com.timjcshop.www.Tools\obj\Debug\com.timjcshop.www.Tools.dll
+D:\dev\添美\timjcshop\com.timjcshop.www.Tools\obj\Debug\com.timjcshop.www.Tools.pdb

@@ -1,0 +1,7 @@
+F:\客户网站\t添美\timjcshop\com.gshop.www.DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\客户网站\t添美\timjcshop\com.gshop.www.DAL\bin\Debug\com.gshop.www.DAL.dll
+F:\客户网站\t添美\timjcshop\com.gshop.www.DAL\bin\Debug\com.gshop.www.DAL.pdb
+F:\客户网站\t添美\timjcshop\com.gshop.www.DAL\bin\Debug\com.gshop.www.Model.dll
+F:\客户网站\t添美\timjcshop\com.gshop.www.DAL\bin\Debug\com.gshop.www.Model.pdb
+F:\客户网站\t添美\timjcshop\com.gshop.www.DAL\obj\Debug\com.gshop.www.DAL.dll
+F:\客户网站\t添美\timjcshop\com.gshop.www.DAL\obj\Debug\com.gshop.www.DAL.pdb

@@ -1,0 +1,15 @@
+F:\客户网站\t添美\timjcshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.dll
+F:\客户网站\t添美\timjcshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.pdb
+F:\客户网站\t添美\timjcshop\com.eshop.www.Model\obj\Debug\ResolveAssemblyReference.cache
+F:\客户网站\t添美\timjcshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.dll
+F:\客户网站\t添美\timjcshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.pdb
+E:\SourceCode\gltceshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.dll
+E:\SourceCode\gltceshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.pdb
+E:\SourceCode\gltceshop\com.eshop.www.Model\obj\Debug\ResolveAssemblyReference.cache
+E:\SourceCode\gltceshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.dll
+E:\SourceCode\gltceshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.pdb
+E:\ll\tfshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.dll
+E:\ll\tfshop\com.eshop.www.Model\bin\Debug\com.eshop.www.Model.pdb
+E:\ll\tfshop\com.eshop.www.Model\obj\Debug\ResolveAssemblyReference.cache
+E:\ll\tfshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.dll
+E:\ll\tfshop\com.eshop.www.Model\obj\Debug\com.eshop.www.Model.pdb

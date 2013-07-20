@@ -1,0 +1,168 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 11">
+<link rel=File-List href="123.files/filelist.xml">
+<link rel=Edit-Time-Data href="123.files/editdata.mso">
+<link rel=OLE-Object-Data href="123.files/oledata.mso">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Created>1996-12-17T01:32:42Z</o:Created>
+  <o:LastSaved>2011-03-08T09:23:49Z</o:LastSaved>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:RemovePersonalInformation/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;}
+tr
+	{mso-height-source:auto;
+	mso-ruby-visibility:none;}
+col
+	{mso-width-source:auto;
+	mso-ruby-visibility:none;}
+br
+	{mso-data-placement:same-cell;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:windowtext;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:常规;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:windowtext;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	mso-char-type:none;
+	display:none;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <x:ExcelWorkbook>
+  <x:ExcelWorksheets>
+   <x:ExcelWorksheet>
+    <x:Name>Sheet1</x:Name>
+    <x:WorksheetOptions>
+     <x:DefaultRowHeight>285</x:DefaultRowHeight>
+     <x:CodeName>Sheet1</x:CodeName>
+     <x:Selected/>
+     <x:Panes>
+      <x:Pane>
+       <x:Number>3</x:Number>
+       <x:ActiveRow>1</x:ActiveRow>
+       <x:ActiveCol>1</x:ActiveCol>
+      </x:Pane>
+     </x:Panes>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+   <x:ExcelWorksheet>
+    <x:Name>Sheet2</x:Name>
+    <x:WorksheetOptions>
+     <x:DefaultRowHeight>285</x:DefaultRowHeight>
+     <x:CodeName>Sheet2</x:CodeName>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+   <x:ExcelWorksheet>
+    <x:Name>Sheet3</x:Name>
+    <x:WorksheetOptions>
+     <x:DefaultRowHeight>285</x:DefaultRowHeight>
+     <x:CodeName>Sheet3</x:CodeName>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+    </x:WorksheetOptions>
+   </x:ExcelWorksheet>
+  </x:ExcelWorksheets>
+  <x:WindowHeight>4530</x:WindowHeight>
+  <x:WindowWidth>8505</x:WindowWidth>
+  <x:WindowTopX>480</x:WindowTopX>
+  <x:WindowTopY>120</x:WindowTopY>
+  <x:AcceptLabelsInFormulas/>
+  <x:ProtectStructure>False</x:ProtectStructure>
+  <x:ProtectWindows>False</x:ProtectWindows>
+ </x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+
+<body link=blue vlink=purple>
+
+<table x:str border=0 cellpadding=0 cellspacing=0 width=144 style='border-collapse:
+ collapse;table-layout:fixed;width:108pt'>
+ <col width=72 span=2 style='width:54pt'><tr height=19 style='height:14.25pt'><td height=19 width=72 style='height:14.25pt;width:54pt'>标题</td><td width=72 style='width:54pt'>摘要</td><td width=72 style='width:54pt'>内容</td><td width=72 style='width:54pt'>关键字</td></tr><tr height=19 style='height:14.25pt'><td height=19 width=72 style='height:14.25pt;width:54pt'>甘肃牛奶投毒案凶手确定 系遭同行报复</td><td width=72 style='width:54pt'>甘肃省平凉官方11日下午4时召开“4·7”散装牛奶投毒案件新闻发布会称，已确定投毒凶手系崆峒区柳湖乡泾滩村村民吴某和马某夫妇合伙作案，但拒绝透露更多细节信息。该事件共导致39人中毒，其中3名婴幼儿死亡。</td><td width=72 style='width:54pt'><P>中新网甘肃平凉4月11日电&nbsp; 甘肃省平凉官方11日下午4时在平凉宾馆召开“4·7”投毒案件新闻发布会称，经公安机关刑侦技术人员反复勘验、调查取证、检验鉴定，现已确定投毒凶手系崆峒区柳湖乡泾滩村村民吴某和马某夫妇合伙作案。</P>
+<P>另据黑龙江晨报报道，犯罪嫌疑人吴广全、马秀玲夫妇与马文选共同租用一个院子经营奶厂。2010年以来，因生活琐事及互相竞争引发的矛盾，吴广全夫妇对马文选产生怨恨心理，预谋伺机报复。4月1日前后，吴广全在平凉城区一肉食品加工户处购买亚硝酸盐。其妻马秀玲分别于4月5日、6日两次趁马文选不备之际将所购买亚硝酸盐投入马某送奶桶之中，致39人中毒，其中3名幼儿死亡。</P>
+<P>平凉市政府新闻发言人吴镇图说，在案件侦查工作取得重大进展的同时，中毒人员目前的救治工作也进展顺利，大部分接受治疗人员已痊愈出院。他还称“所有中毒患者在住院期间的一切医疗费用将由政府全部承担”。</P>
+<P>“截至今日12时，因此次投毒案件住院治疗的36例患者，已有31例安全治愈出院。”吴镇图介绍说，其余5例中毒症状也基本消失，因入院前就患有感冒、营养不良、高血压等疾病，将继续留院观察治疗，无新增死亡病例。</P>
+<P>吴镇图说，平凉市政府已对该市包括奶牛养殖企业、个体养殖户、鲜奶配送站及销售点、食品加工企业和餐饮单位进行了拉网式排查。“同时，我们还对平凉所有生产销售散装牛奶的养殖户均进行了采集样奶，然后送甘肃省检测部门进行化验，结果均为合格，是放心奶。”他表示。</P>
+<P>新闻发布会结束后，吴镇图在多家媒体记者的“围追堵截”中，依然不愿意透露平凉“4·7”投毒案件更多细节，只是说“想了解详细情况，就去具体责任部门”。</P></td><td width=72 style='width:54pt'>甘肃牛奶投毒案凶手确定 系遭同行报复</td></tr> <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=72 style='width:54pt'></td>
+  <td width=72 style='width:54pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>

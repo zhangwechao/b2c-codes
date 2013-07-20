@@ -1,0 +1,91 @@
+﻿<%@ WebHandler Language="C#" Class="news_comment" %>
+
+using System;
+using System.Web;
+using com.eshop.www.BLL;
+using com.eshop.www.Model;
+using System.Data.OleDb;
+using System.Data;
+using com.eshop.www.Tools;
+using Microsoft.Practices.EnterpriseLibrary.Data;
+using System.Data.Common;
+
+
+public class news_comment : IHttpHandler
+{
+    
+    public void ProcessRequest (HttpContext context) {
+        context.Response.ContentType = "text/plain";
+        string action  = context.Request.Form["action"];
+        if (action == "export")
+            Export();
+        else
+            Search();
+            
+    }
+    private void Export()
+    {
+        //将模板excel另存为
+        string fileName = HttpContext.Current.Request.Form["fileName"];
+        string tempPath = HttpContext.Current.Server.MapPath("../export/news_comment.xls");
+        string destPath = HttpContext.Current.Server.MapPath("../export/") + fileName + ".xls";
+        FileHelper.FileSaveAs(tempPath, destPath);
+        
+        //取出数据库所有数据
+        string fieldList = "content,ip,user_name,create_date";
+        string orderField = "create_date";
+        bool orderBy = false;
+        NewsCommentBusiness newsCommentBusiness = new NewsCommentBusiness();
+        Website website = LoginInfo.GetCurrentWebsite();
+        int recordCount = newsCommentBusiness.GetRecordCount(" website_id="+website.Id);
+        DataRecordTable table = newsCommentBusiness.GetList(fieldList, orderField, orderBy, 1, recordCount, "website_id=" + website.Id);
+        
+        //用oleDb写入excel
+        string excelConn = string.Format(System.Configuration.ConfigurationManager.AppSettings["execlConnStr"], destPath);
+        using (OleDbConnection conn = new OleDbConnection(excelConn))
+        {
+            conn.Open();
+            OleDbCommand cmd = conn.CreateCommand();
+            string tempSql = "insert into [sheet1$] ([内容],[IP],[用户名],[创建日期]) values (@content,@ip,@userName,@createDate)";
+            string content = string.Empty;
+            string ip = string.Empty;
+            string userName = string.Empty;
+            string createDate = string.Empty;
+            foreach (DataRow row in table.Table.Rows)
+            {
+                content = row["content"].ToString();
+                ip = row["ip"].ToString();
+                userName = row["user_name"].ToString();
+                createDate = DateTime.Parse(row["create_date"].ToString()).ToShortDateString();
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@content",content);
+                cmd.Parameters.AddWithValue("@ip",ip);
+                cmd.Parameters.AddWithValue("@userName",userName);
+                cmd.Parameters.AddWithValue("@createDate",createDate);
+                cmd.CommandText = tempSql;
+                cmd.ExecuteNonQuery();
+            }
+        }
+        HttpContext.Current.Response.Write("{\"message\":\"success\"}");
+        
+    }
+    private void Search()
+    {
+        Website website = LoginInfo.GetCurrentWebsite();
+        string title = HttpContext.Current.Request.Form["title"];
+        string fieldList = "Id,title,order_by";
+        string orderField = "order_by";
+        bool orderBy = false;
+        string where = "website_id="+website.Id+" and title like '%"+title+"%'";
+        DataRecordTable table = new NewsContentBusiness().GetList(fieldList,orderField,orderBy,1,10,where);
+        string json = com.eshop.www.Tools.WebFormHandler.CreateJsonParameters(table.Table,"news_content");
+        HttpContext.Current.Response.Write(json);
+        
+    }
+    public bool IsReusable {
+        get {
+            return false;
+        }
+    }
+
+}

@@ -1,0 +1,15 @@
+﻿body{background: #ffffff;}
+#Content2{ background:#f1f1f1;}
+#content{font: normal 12px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;color: #4f6b72;clear:both;}
+#content_input{float:left;width:670px; border:#dce9f6 1px solid;}
+#inputTable{float:left;width:100%;}
+.inputTableTd{padding-left:5px;padding-bottom:10px; padding-top:5px; line-height:22px;}
+#inputTable tr{ height:22px; line-height:22px; background:#eef0f6;}
+#inputTable td{ height:22px; line-height:22px;}
+#tip{padding-left:20px; background:#eef0f6; padding:5px;}
+#tip h2{font-size:160%; font-weight:bold; color:#1C94C4}
+#tip p{margin-top:1px;}
+#content_note{float:left; background:#f4f8fc; height:auto; padding:10px; border:#dce9f6 1px solid;}
+#content_note h2{font-size:160%; font-weight:bold; color:red;}
+#content_note ul{margin-left:30px;}
+#content_note ul li{height:30px; line-height:30px;}

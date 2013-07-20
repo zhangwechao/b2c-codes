@@ -1,0 +1,10 @@
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Model\obj\Debug\ResolveAssemblyReference.cache
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Model\bin\Debug\com.timjcshop.www.Model.dll
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Model\bin\Debug\com.timjcshop.www.Model.pdb
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Model\obj\Debug\com.timjcshop.www.Model.dll
+E:\huangbo\c#.net\aspx\添美\timjcshop\com.timjcshop.www.Model\obj\Debug\com.timjcshop.www.Model.pdb
+D:\dev\添美\timjcshop\com.timjcshop.www.Model\bin\Debug\com.timjcshop.www.Model.dll
+D:\dev\添美\timjcshop\com.timjcshop.www.Model\bin\Debug\com.timjcshop.www.Model.pdb
+D:\dev\添美\timjcshop\com.timjcshop.www.Model\obj\Debug\ResolveAssemblyReference.cache
+D:\dev\添美\timjcshop\com.timjcshop.www.Model\obj\Debug\com.timjcshop.www.Model.dll
+D:\dev\添美\timjcshop\com.timjcshop.www.Model\obj\Debug\com.timjcshop.www.Model.pdb

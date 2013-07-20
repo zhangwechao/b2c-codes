@@ -1,0 +1,15 @@
+F:\客户网站\t添美\timjcshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.dll
+F:\客户网站\t添美\timjcshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.pdb
+F:\客户网站\t添美\timjcshop\com.eshop.www.Tools\obj\Debug\ResolveAssemblyReference.cache
+F:\客户网站\t添美\timjcshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.dll
+F:\客户网站\t添美\timjcshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.pdb
+E:\SourceCode\gltceshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.dll
+E:\SourceCode\gltceshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.pdb
+E:\SourceCode\gltceshop\com.eshop.www.Tools\obj\Debug\ResolveAssemblyReference.cache
+E:\SourceCode\gltceshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.dll
+E:\SourceCode\gltceshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.pdb
+E:\ll\tfshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.dll
+E:\ll\tfshop\com.eshop.www.Tools\bin\Debug\com.eshop.www.Tools.pdb
+E:\ll\tfshop\com.eshop.www.Tools\obj\Debug\ResolveAssemblyReference.cache
+E:\ll\tfshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.dll
+E:\ll\tfshop\com.eshop.www.Tools\obj\Debug\com.eshop.www.Tools.pdb
